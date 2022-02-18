@@ -1,10 +1,9 @@
 package com.fakegram.microservices.auth.service;
 
 import com.fakegram.microservices.auth.dto.ProfileDTO;
-import com.fakegram.microservices.auth.entity.Profile;
 
 public interface ProfileService {
-	public String saveProfile(Profile profile);
+	public boolean registerProfile(ProfileDTO profile, String psw);
 	
 	public ProfileDTO getProfileById(String idProfile);
 	
