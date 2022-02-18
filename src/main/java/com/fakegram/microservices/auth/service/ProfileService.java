@@ -10,5 +10,5 @@ public interface ProfileService {
 	
 	public boolean updateProfile(ProfileDTO profileDTO);
 	
-    public boolean updateProfilePswById(String idProfile, String newPsw);
+//    public boolean updateProfilePswById(String idProfile, String newPsw);
 }
