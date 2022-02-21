@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.fakegram.microservices.auth.entity.Profile;
 
 public interface ProfileRepository extends JpaRepository<Profile, String>{
-
+	public Profile findByEmail(String email);
 }

@@ -21,9 +21,7 @@ public class ProfileController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<ProfileDTO> login(@RequestBody ProfileDTO profileDTO){
-		/**
-		 * TODO
-		 */
+		
 		
 		return new ResponseEntity<>(new ProfileDTO("testid", null, null, null, null, null), HttpStatus.OK);
 	}

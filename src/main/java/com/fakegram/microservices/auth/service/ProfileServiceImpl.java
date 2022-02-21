@@ -42,6 +42,18 @@ public class ProfileServiceImpl implements ProfileService {
 		return false;
 	}
 
+	@Override
+	public boolean login(ProfileDTO profileDTO) {
+		Profile p = profileRepo.findByEmail(profileDTO.getEmail());
+		if(p != null) {
+			if(profileDTO.getPassword().equals(p.getPassword())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
 //	@Override
 //	public boolean updateProfilePswById(String idProfile, String newPsw) {
 //

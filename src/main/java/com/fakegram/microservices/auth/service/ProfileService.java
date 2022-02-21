@@ -9,5 +9,7 @@ public interface ProfileService {
 	
 	public boolean updateProfile(ProfileDTO profileDTO);
 	
+	public boolean login(ProfileDTO profileDTO);
+	
 //    public boolean updateProfilePswById(String idProfile, String newPsw);
 }
