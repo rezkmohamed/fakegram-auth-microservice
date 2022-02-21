@@ -24,6 +24,7 @@ public class ProfileUtils {
 		profile.setName(profileDTO.getName());
 		profile.setNickname(profileDTO.getNickname());
 		profile.setProPic(profileDTO.getProPic());
+		profile.setPassword(profileDTO.getPassword());
 		
 		return profile;
 	}

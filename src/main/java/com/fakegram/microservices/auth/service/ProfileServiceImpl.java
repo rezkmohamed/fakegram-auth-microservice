@@ -14,9 +14,9 @@ public class ProfileServiceImpl implements ProfileService {
 	private ProfileRepository profileRepo;
 
 	@Override
-	public boolean registerProfile(ProfileDTO profile, String psw) {
+	public boolean registerProfile(ProfileDTO profile) {
 		Profile profileToSave = ProfileUtils.profileDTOToProfileEntity(profile);
-		profileToSave.setPassword(psw);
+		profileToSave.setPassword(profile.getPassword());
 		if(profileRepo.save(profileToSave) != null) {
 			return true;
 		}

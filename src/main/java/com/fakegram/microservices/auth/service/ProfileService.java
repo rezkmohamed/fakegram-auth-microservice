@@ -3,7 +3,7 @@ package com.fakegram.microservices.auth.service;
 import com.fakegram.microservices.auth.dto.ProfileDTO;
 
 public interface ProfileService {
-	public boolean registerProfile(ProfileDTO profile, String psw);
+	public boolean registerProfile(ProfileDTO profile);
 	
 	public ProfileDTO getProfileById(String idProfile);
 	

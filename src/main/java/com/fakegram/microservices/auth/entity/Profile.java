@@ -17,7 +17,7 @@ public class Profile {
 	@Column(name="id_profile")
 	private String idProfile;
 	
-	@Column(name="name")
+	@Column(name="profile_name")
 	private String name;
 	
 	@Column(name="nickname")
@@ -32,7 +32,7 @@ public class Profile {
 	@Column(name="email")
 	private String email;
 	
-	@Column(name="password")
+	@Column(name="profile_password")
 	private String password;
 
 	public Profile() {

@@ -21,16 +21,18 @@ public class ProfileController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<ProfileDTO> login(@RequestBody ProfileDTO profileDTO){
+		if(profileService.login(profileDTO)) {
+			return new ResponseEntity<>(new ProfileDTO("LOGIN SUCCESS", null, null, null, null, null), HttpStatus.OK);
+		}
 		
-		
-		return new ResponseEntity<>(new ProfileDTO("testid", null, null, null, null, null), HttpStatus.OK);
+		return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity<Boolean> register(@RequestBody ProfileDTO profileDTO,@RequestParam(value="password") String psw){
-//		if(profileService.saveProfile(profileDTO)) {
-//			
-//		}
+	public ResponseEntity<Boolean> register(@RequestBody ProfileDTO profileDTO){
+		if(profileService.registerProfile(profileDTO)) {
+			return new ResponseEntity<>(true, HttpStatus.OK);
+		}
 		
 		return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
 	}
