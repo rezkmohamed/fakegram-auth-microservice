@@ -25,7 +25,7 @@ public class ProfileController {
 		 * TODO
 		 */
 		
-		return null;
+		return new ResponseEntity<>(new ProfileDTO("testid", null, null, null, null, null), HttpStatus.OK);
 	}
 	
 	@PostMapping("/register")
