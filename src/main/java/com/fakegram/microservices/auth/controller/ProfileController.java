@@ -6,11 +6,12 @@ import java.util.Map;
 import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 
-import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
+//import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,41 +42,41 @@ public class ProfileController {
 		return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 	}
 	
-	@GetMapping("/test")
-	@RolesAllowed("user")
-    public ResponseEntity<HttpStatus> testRole(HttpServletRequest request){
-		tokenDecoder(request);
-		return new ResponseEntity<>(HttpStatus.OK);
-    }
+//	@GetMapping("/test")
+//	@RolesAllowed("user")
+//    public ResponseEntity<HttpStatus> testRole(HttpServletRequest request){
+//		tokenDecoder(request);
+//		return new ResponseEntity<>(HttpStatus.OK);
+//    }
 	
-	private void tokenDecoder(HttpServletRequest request) {
-//		String header = request.getHeader("Authorization");
-//		String token = header.replace("Bearer ", "");
-//		Jws<Claims> result =  Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token);	
-//		System.out.println(result.getBody().getClass());
-		KeycloakAuthenticationToken token = (KeycloakAuthenticationToken) request.getUserPrincipal();
-	    System.out.println("---- ROLES ----");
-	    token.getAccount().getRoles().forEach(System.out::println);
-	    System.out.println(token.toString());
-	    
-	    
-	    
-//	    Map<String, Object> otherClaims = token.getAccount().getKeycloakSecurityContext().getIdToken().getOtherClaims();
+//	private void tokenDecoder(HttpServletRequest request) {
+////		String header = request.getHeader("Authorization");
+////		String token = header.replace("Bearer ", "");
+////		Jws<Claims> result =  Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token);	
+////		System.out.println(result.getBody().getClass());
+//		KeycloakAuthenticationToken token = (KeycloakAuthenticationToken) request.getUserPrincipal();
+//	    System.out.println("---- ROLES ----");
+//	    token.getAccount().getRoles().forEach(System.out::println);
+//	    System.out.println(token.toString());
+//	    
+//	    
+//	    
+////	    Map<String, Object> otherClaims = token.getAccount().getKeycloakSecurityContext().getIdToken().getOtherClaims();
+////
+////	    Enumeration<String> attributeNames = request.getAttributeNames();
+////	    while (attributeNames.hasMoreElements())
+////	          System.out.println(attributeNames.nextElement());
+////
+////	    for(String s : otherClaims.keySet()){
+////	            System.out.println(s);
+////	            System.out.println(otherClaims.get(s).toString());
+////	     }
 //
-//	    Enumeration<String> attributeNames = request.getAttributeNames();
-//	    while (attributeNames.hasMoreElements())
-//	          System.out.println(attributeNames.nextElement());
-//
-//	    for(String s : otherClaims.keySet()){
-//	            System.out.println(s);
-//	            System.out.println(otherClaims.get(s).toString());
-//	     }
-
-	     System.out.println("------------");
-	}
+//	     System.out.println("------------");
+//	}
 	
 	@PostMapping("/register")
-	@RolesAllowed("admin")
+//	@RolesAllowed("admin")
 	public ResponseEntity<Boolean> register(@RequestBody ProfileDTO profileDTO){
 		if(profileService.registerProfile(profileDTO)) {
 			return new ResponseEntity<>(true, HttpStatus.OK);
