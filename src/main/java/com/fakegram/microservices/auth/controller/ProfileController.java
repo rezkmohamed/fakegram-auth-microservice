@@ -29,7 +29,7 @@ public class ProfileController {
 	@Autowired
 	private ProfileService profileService;
 	
-	private String signingKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzcZqR7mY9KjHDA8YNYfRSrJ7e0gFIB3flqsHynQj1xchdq6nL4nTvhJbkuTIdb76L8McRbDpCQsw8pzy2H2pU3YrK2Nf6SRYOvsN+1j3laXiZZLYllEYF44EzSdGyBjwTVceDKpcvwwDWWi/k/NoeGyJSE7w/j0KTK/P4O1Qgt4uXSNYv9CZCVViJxDL1r5u31BO+pK9iQiop+VDJKoGrxzrfZEhydtu3oVsVXXRlwW1hCradkt1MJLyxGJyc7DIpcLunmrMxsGguqs5cGoYILyWoP2NNMYeNnRKr4SS50Z134qJElr2V4h6BjahpnEykga1brKNMDKQdZm2rLzAEwIDAQAB";
+//	private String signingKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzcZqR7mY9KjHDA8YNYfRSrJ7e0gFIB3flqsHynQj1xchdq6nL4nTvhJbkuTIdb76L8McRbDpCQsw8pzy2H2pU3YrK2Nf6SRYOvsN+1j3laXiZZLYllEYF44EzSdGyBjwTVceDKpcvwwDWWi/k/NoeGyJSE7w/j0KTK/P4O1Qgt4uXSNYv9CZCVViJxDL1r5u31BO+pK9iQiop+VDJKoGrxzrfZEhydtu3oVsVXXRlwW1hCradkt1MJLyxGJyc7DIpcLunmrMxsGguqs5cGoYILyWoP2NNMYeNnRKr4SS50Z134qJElr2V4h6BjahpnEykga1brKNMDKQdZm2rLzAEwIDAQAB";
 	
 	
 	@PostMapping("/login")
@@ -56,7 +56,7 @@ public class ProfileController {
 		KeycloakAuthenticationToken token = (KeycloakAuthenticationToken) request.getUserPrincipal();
 	    System.out.println("---- ROLES ----");
 	    token.getAccount().getRoles().forEach(System.out::println);
-	    
+	    System.out.println(token.toString());
 	    
 	    
 	    
