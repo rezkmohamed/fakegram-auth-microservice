@@ -1,7 +1,9 @@
 server:
   port: 8081
 
-spring: 
+spring:
+  kafka:
+   bootstrap-servers: localhost:9092  
   application:
      name : authservice
      
@@ -24,6 +26,7 @@ spring:
     hibernate:
       ddl-auto: none
       
+signingKey: ciao
 #keycloak:
 #  realm: javatechie
 #  auth-server-url: http://localhost:8180
